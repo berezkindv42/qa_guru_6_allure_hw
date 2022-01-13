@@ -1,6 +1,7 @@
 package com.company.allure;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -13,12 +14,12 @@ public class SelenideTest {
 
     @Test
     public void testIssueSearch() {
+
         open("https://github.com");
 
         $(".header-search-input").click();
         $(".header-search-input").sendKeys("DaymianDark/qa_guru_work_book");
         $(".header-search-input").submit();
-
         $(linkText("DaymianDark/qa_guru_work_book")).click();
         $(partialLinkText("Issue")).click();
         $(withText("Issue name for test")).should(Condition.visible);
