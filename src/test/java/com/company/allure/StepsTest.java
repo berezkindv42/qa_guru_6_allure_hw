@@ -12,8 +12,8 @@ import static org.openqa.selenium.By.partialLinkText;
 
 public class StepsTest {
 
-    private static final String REPOSITORY = "DaymianDark/qa_guru_work_book";
-    private static final String NAME = "Issue name for test";
+    static final String REPOSITORY = "DaymianDark/qa_guru_work_book";
+    static final String NAME = "Issue name for test";
 
     @Test
     public void lambdaStepsTest() {
