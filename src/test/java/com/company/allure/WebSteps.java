@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.AfterEach;
 
 import java.nio.charset.StandardCharsets;
 

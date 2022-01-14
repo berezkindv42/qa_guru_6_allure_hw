@@ -15,12 +15,12 @@ import static org.openqa.selenium.By.partialLinkText;
 
 public class LambdaSteps {
 
-    static final String REPOSITORY = "DaymianDark/qa_guru_work_book";
-    static final String NAME = "Issue name for test";
+    private static final String REPOSITORY = "DaymianDark/qa_guru_work_book";
+    private static final String NAME = "Issue name for test";
 
     @AfterEach
     public void saveSourses() {
-        Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html"); // добавление аттачамента к отчету для всех степов
+        Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html"); // добавление аттачамента к отчету для теста
     }
 
     @Test

@@ -3,16 +3,16 @@ package com.company.allure;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import static com.company.allure.LambdaSteps.NAME;
-import static com.company.allure.LambdaSteps.REPOSITORY;
 
 public class AnnotatedSteps {
 
+    private static final String REPOSITORY = "DaymianDark/qa_guru_work_book";
+    private static final String NAME = "Issue name for test";
     WebSteps webSteps = new WebSteps();
 
     @AfterEach
     public void saveSourses() {
-        webSteps.attachPageSource(); // добавление аттачамента к отчету для всех степов
+        webSteps.attachPageSource(); // добавление аттачамента к отчету для всего теста
     }
 
     @Test
