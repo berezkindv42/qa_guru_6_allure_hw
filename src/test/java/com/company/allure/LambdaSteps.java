@@ -38,7 +38,6 @@ public class LambdaSteps {
             $(linkText(REPOSITORY)).click();
         });
         step("Открываем таб Issues", () -> {
-//            Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html"); // конструкция добавления аттачмента к отчету для каждого степа отдельно
             $(partialLinkText("Issue")).click();
         });
         step("Проверяем наличие issue с именем " + NAME, () -> {

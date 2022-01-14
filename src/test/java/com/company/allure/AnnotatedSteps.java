@@ -12,7 +12,7 @@ public class AnnotatedSteps {
 
     @AfterEach
     public void saveSourses() {
-        webSteps.attachPageSource(); // добавление аттачамента к отчету для всего теста
+        webSteps.attachPageSource();
     }
 
     @Test

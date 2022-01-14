@@ -2,11 +2,9 @@ package com.company.allure;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.AllureLifecycle;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
-import java.util.EventListener;
 
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -21,7 +19,6 @@ public class SelenideTest {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("https://github.com");
-
         $(".header-search-input").click();
         $(".header-search-input").sendKeys("DaymianDark/qa_guru_work_book");
         $(".header-search-input").submit();
@@ -29,5 +26,4 @@ public class SelenideTest {
         $(partialLinkText("Issue")).click();
         $(withText("Issue name for test")).should(Condition.visible);
     }
-
 }
