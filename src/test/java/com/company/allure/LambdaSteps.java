@@ -1,6 +1,9 @@
 package com.company.allure;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Allure;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -10,10 +13,15 @@ import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
-public class StepsTest {
+public class LambdaSteps {
 
     static final String REPOSITORY = "DaymianDark/qa_guru_work_book";
     static final String NAME = "Issue name for test";
+
+    @AfterEach
+    public void saveSourses() {
+        Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html"); // добавление аттачамента к отчету для всех степов
+    }
 
     @Test
     public void lambdaStepsTest() {
@@ -30,6 +38,7 @@ public class StepsTest {
             $(linkText(REPOSITORY)).click();
         });
         step("Открываем таб Issues", () -> {
+//            Allure.addAttachment("Page Source", "text/html", WebDriverRunner.source(), "html"); // конструкция добавления аттачмента к отчету для каждого степа отдельно
             $(partialLinkText("Issue")).click();
         });
         step("Проверяем наличие issue с именем " + NAME, () -> {
